@@ -1,6 +1,14 @@
 from rest_framework import serializers
 from .models import Product , Category , Fornecedor
 
+
+class ProductListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = 'id' , 'name' , 'description' , 'category'
+
+
+
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
